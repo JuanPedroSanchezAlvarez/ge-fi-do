@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class LoginComponent {
 
   hidePassword: boolean = true;
+  loadingForm: boolean = false;
   form: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar) {
@@ -21,9 +22,10 @@ export class LoginComponent {
 
   login(): void {
     if (this.form.value.user == 'prueba' && this.form.value.password == 'prueba') {
-      // Redireccionamos a otra página.
+      this.fakeLoadingForm();
     } else {
       this.openLoginErrorSnackBar();
+      //this.form.reset();
     }
   }
 
@@ -34,6 +36,13 @@ export class LoginComponent {
       verticalPosition: 'bottom',
       panelClass: 'errorSnackBar'
     });
+  }
+
+  fakeLoadingForm() {
+    this.loadingForm = true;
+    setTimeout(() => {
+      this.loadingForm = false;
+    }, 3000);
   }
 
 }

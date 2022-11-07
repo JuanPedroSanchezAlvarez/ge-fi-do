@@ -1,7 +1,8 @@
-<div class="loginBody mat-app-background">
-    <div class="loginDiv">
-        <form [formGroup]="form" (ngSubmit)="login()">
-            <img class="loginImg" src="./assets/img/login.png" alt="login">
+<div id="loginBody" class="mat-app-background">
+    <div id="loginDiv">
+        <mat-spinner id="loginSpinner" *ngIf="loadingForm"></mat-spinner>
+        <form [formGroup]="form" (ngSubmit)="login()" *ngIf="!loadingForm">
+            <img id="loginImg" src="./assets/img/login.png" alt="login">
             <h1>Login</h1>
             <mat-form-field class="loginInputField" appearance="fill">
                 <mat-label>Usuario</mat-label>
@@ -9,15 +10,15 @@
             </mat-form-field>
             <mat-form-field class="loginInputField" appearance="fill">
                 <mat-label>Password</mat-label>
-                <button mat-icon-button matPrefix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                <button mat-icon-button matPrefix type="button" (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
                     <mat-icon>{{hidePassword ? 'lock' : 'lock_open'}}</mat-icon>
                 </button>
                 <input matInput [type]="hidePassword ? 'password' : 'text'" autocomplete="off" formControlName="password">
-                <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
                     <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </button>
             </mat-form-field>
-            <button mat-raised-button type="submit" class="loginButton" color="primary" [disabled]="form.invalid">Iniciar sesión</button>
+            <button mat-raised-button type="submit" id="loginButton" color="primary" [disabled]="form.invalid">Iniciar sesión</button>
         </form>
     </div>
 </div>
