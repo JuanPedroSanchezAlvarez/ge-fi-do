@@ -1,0 +1,23 @@
+<div class="loginBody mat-app-background">
+    <div class="loginDiv">
+        <form [formGroup]="form" (ngSubmit)="login()">
+            <img class="loginImg" src="./assets/img/login.png" alt="login">
+            <h1>Login</h1>
+            <mat-form-field class="loginInputField" appearance="fill">
+                <mat-label>Usuario</mat-label>
+                <input matInput type="text" placeholder="usuario@ejemplo.com" autocomplete="off" formControlName="user">
+            </mat-form-field>
+            <mat-form-field class="loginInputField" appearance="fill">
+                <mat-label>Password</mat-label>
+                <button mat-icon-button matPrefix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                    <mat-icon>{{hidePassword ? 'lock' : 'lock_open'}}</mat-icon>
+                </button>
+                <input matInput [type]="hidePassword ? 'password' : 'text'" autocomplete="off" formControlName="password">
+                <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                    <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <button mat-raised-button type="submit" class="loginButton" color="primary" [disabled]="form.invalid">Iniciar sesión</button>
+        </form>
+    </div>
+</div>
