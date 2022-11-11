@@ -2,18 +2,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MovimientosRoutingModule } from './movimientos-routing.module';
-import { MaterialModule } from '../material/material.module';
-import { MainPageComponent } from './main-page/main-page.component';
+import { MainComponent } from './pages/main/main.component';
+import { EditComponent } from './pages/edit/edit.component';
 
 
 @NgModule({
   declarations: [
-    MainPageComponent
+    MainComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,
-    MovimientosRoutingModule,
-    MaterialModule
+    MovimientosRoutingModule
   ]
 })
 export class MovimientosModule { }

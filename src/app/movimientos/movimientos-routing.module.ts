@@ -1,9 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MainPageComponent } from './main-page/main-page.component';
+import { EditComponent } from './pages/edit/edit.component';
+import { MainComponent } from './pages/main/main.component';
 
 const routes: Routes = [
-  {path: '', component: MainPageComponent }
+  {
+    path: '',
+    children: [
+      { path: 'main', component: MainComponent },
+      { path: 'edit', component: EditComponent },
+      { path: '**', redirectTo: 'main' }
+    ]
+  }
 ];
 
 @NgModule({
