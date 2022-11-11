@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent {
   loadingForm: boolean = false;
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private _snackBar: MatSnackBar) {
     this.form = this.formBuilder.group({
       user: ['', Validators.required],
       password: ['', Validators.required]
@@ -41,7 +42,7 @@ export class LoginComponent {
   fakeLoadingForm() {
     this.loadingForm = true;
     setTimeout(() => {
-      this.loadingForm = false;
+      this.router.navigate(['movimientos']);
     }, 3000);
   }
 

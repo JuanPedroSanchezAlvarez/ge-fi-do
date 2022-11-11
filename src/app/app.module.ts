@@ -8,11 +8,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { MaterialModule } from './material/material.module';
 import { LoginComponent } from './components/login/login.component';
+import { MainMenuComponent } from './components/main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    MainMenuComponent
   ],
   imports: [
     BrowserModule,

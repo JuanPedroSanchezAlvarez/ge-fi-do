@@ -3,9 +3,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 
 
@@ -15,9 +18,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
+    MatListModule,
     MatProgressSpinnerModule,
+    MatSidenavModule,
     MatSliderModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule
   ]
 })
 export class MaterialModule { }

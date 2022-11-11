@@ -4,11 +4,11 @@ import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-navigation-schematic',
-  templateUrl: './navigation-schematic.component.html',
-  styleUrls: ['./navigation-schematic.component.css']
+  selector: 'app-main-menu',
+  templateUrl: './main-menu.component.html',
+  styleUrls: ['./main-menu.component.css']
 })
-export class NavigationSchematicComponent {
+export class MainMenuComponent {
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -16,6 +16,6 @@ export class NavigationSchematicComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(private breakpointObserver: BreakpointObserver) { }
 
 }
